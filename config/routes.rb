@@ -8,6 +8,15 @@ Rails.application.routes.draw do
   devise_for :interpreters, path: 'interpreters', controllers: {
     sessions: 'interpreters/sessions'
   }
+
+  # devise_scope :interpreter do
+  #   get 'interpreters/signout', to: 'interpreters/sessions#destroy', as: :interpreter_signout
+  # end
+  
+  resources :interpreters
+  resources :clients
+  resources :admins
+
   root to: "homes#index"
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

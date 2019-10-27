@@ -14,7 +14,6 @@
   </head>
 
   <body>
-    <% authenticated_user_type = '' %>
     <% if interpreter_signed_in? %>
         <%= link_to "ilogout", destroy_interpreter_session_path, method: :delete %>
     <% elsif client_signed_in? %>
