@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interpreter:</strong>
+  <%= @interpreter_detail.interpreter_id %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @interpreter_detail.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @interpreter_detail.last_name %>
+</p>
+
+<p>
+  <strong>Abn:</strong>
+  <%= @interpreter_detail.abn %>
+</p>
+
+<p>
+  <strong>Mobile no:</strong>
+  <%= @interpreter_detail.mobile_no %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @interpreter_detail.sex %>
+</p>
+
+<p>
+  <strong>Payment rate:</strong>
+  <%= @interpreter_detail.payment_rate %>
+</p>
+
+<p>
+  <strong>Rating score:</strong>
+  <%= @interpreter_detail.rating_score %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @interpreter_detail.address_id %>
+</p>
+
+<%= link_to 'Edit', edit_interpreter_detail_path(@interpreter_detail) %> |
+<%= link_to 'Back', interpreter_details_path %>

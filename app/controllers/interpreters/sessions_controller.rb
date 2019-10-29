@@ -11,6 +11,7 @@ class Interpreters::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     super
+    # redirect_to interpreters_path and return 
   end
 
   # DELETE /resource/sign_out

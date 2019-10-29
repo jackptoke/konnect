@@ -1,0 +1,62 @@
+<div class="container jumbotron">
+    <p id="notice"><%= notice %></p>
+  <h2>Personal Information</h2>           
+  <table class="table table-borderless">
+    <tbody>
+      <tr>
+        <th>ID No</th>
+        <td>KONNECT<%= @interpreter.id %></td>
+        <th>Rating</th>
+        <td><%= @interpreter.interpreter_detail.rating_score %></td>
+      </tr>
+      <tr>
+        <th>First name</th>
+        <td><%= @interpreter.interpreter_detail.first_name %></td>
+        <th>Last name</th>
+        <td><%= @interpreter.interpreter_detail.last_name %></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><%= @interpreter.email %></td>
+        <th>ABN</th>
+        <td><%= @interpreter.interpreter_detail.abn %></td>
+      </tr>
+      <tr>
+        <th>Mobile</th>
+        <td><%= @interpreter.interpreter_detail.mobile_no %></td>
+        <th>Sex</th>
+        <td><%= @interpreter.interpreter_detail.sex %></td>
+      </tr>
+      <tr>
+        <th>Pay rate</th>
+        <td><%= @interpreter.interpreter_detail.payment_rate %></td>
+        <th> </th>
+        <td> </td>
+      </tr>
+      <tr>
+        <td colspan="4">
+        <h3>Address</h3>
+        </td>
+      </tr>
+      <tr>
+        <th>Street Address</th>
+        <td><%= @interpreter.interpreter_detail.address.street_address %></td>
+        <th>Suburb</th>
+        <td><%= @interpreter.interpreter_detail.address.suburb %></td>
+      </tr>
+       <tr>
+        <th>State</th>
+        <td><%= @interpreter.interpreter_detail.address.state %></td>
+        <th>Postcode</th>
+        <td><%= @interpreter.interpreter_detail.address.postcode %></td>
+      </tr>
+      <tr> 
+        <td> </td>
+        <td><%= link_to 'Edit', edit_address_path(@interpreter.interpreter_detail.address) %></td>
+        <td><%= link_to 'Back', addresses_path %></td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

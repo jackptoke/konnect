@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :interpreter_details
+  resources :addresses
   devise_for :admins, path: 'admins', controllers: {
     sessions: 'admins/sessions'
   }
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
   # devise_scope :interpreter do
   #   get 'interpreters/signout', to: 'interpreters/sessions#destroy', as: :interpreter_signout
   # end
-  
+  get "information", to: "addresses#new", as: "information"
   resources :interpreters
   resources :clients
   resources :admins

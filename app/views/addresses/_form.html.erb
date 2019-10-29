@@ -1,0 +1,81 @@
+<%= form_with(model: address, local: true) do |form| %>
+  <% if address.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(address.errors.count, "error") %> prohibited this address from being saved:</h2>
+
+      <ul>
+        <% address.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.fields_for :interpreter_detail do |idform| %>
+
+  <div class="field">
+ <!--   <%= form.label :interpreter_id %> -->
+    <%= idform.hidden_field :interpreter_id %>
+  </div>
+
+  <div class="field">
+    <%= idform.label :first_name %>
+    <%= idform.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= idform.label :last_name %>
+    <%= idform.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= idform.label :abn %>
+    <%= idform.text_field :abn %>
+  </div>
+
+  <div class="field">
+    <%= idform.label :mobile_no %>
+    <%= idform.text_field :mobile_no %>
+  </div>
+
+  <div class="field">
+    <%= idform.label :sex %>
+    <%= idform.select :sex, InterpreterDetail.sexes.keys %>
+  </div>
+
+  <div class="field">
+    <%= idform.label :payment_rate %>
+    <%= idform.text_field :payment_rate %>
+  </div>
+
+  <div class="field">
+    <%= idform.label :rating_score %>
+    <%= idform.text_field :rating_score %>
+  </div>
+
+  <% end %>
+
+  <div class="field">
+    <%= form.label :street_address %>
+    <%= form.text_field :street_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :suburb %>
+    <%= form.text_field :suburb %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.select :state, Address.states.keys %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postcode %>
+    <%= form.text_field :postcode %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

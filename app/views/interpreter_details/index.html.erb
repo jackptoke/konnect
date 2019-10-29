@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Interpreter Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interpreter</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Abn</th>
+      <th>Mobile no</th>
+      <th>Sex</th>
+      <th>Payment rate</th>
+      <th>Rating score</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interpreter_details.each do |interpreter_detail| %>
+      <tr>
+        <td><%= interpreter_detail.interpreter_id %></td>
+        <td><%= interpreter_detail.first_name %></td>
+        <td><%= interpreter_detail.last_name %></td>
+        <td><%= interpreter_detail.abn %></td>
+        <td><%= interpreter_detail.mobile_no %></td>
+        <td><%= interpreter_detail.sex %></td>
+        <td><%= interpreter_detail.payment_rate %></td>
+        <td><%= interpreter_detail.rating_score %></td>
+        <td><%= interpreter_detail.address_id %></td>
+        <td><%= link_to 'Show', interpreter_detail %></td>
+        <td><%= link_to 'Edit', edit_interpreter_detail_path(interpreter_detail) %></td>
+        <td><%= link_to 'Destroy', interpreter_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Interpreter Detail', new_interpreter_detail_path %>

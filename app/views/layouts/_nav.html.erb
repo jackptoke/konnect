@@ -1,0 +1,37 @@
+
+          
+    
+    <ul class="topnav">
+        <li>
+            <a class="navbar-brand nav-logo" href="#">KONNECT</a>  
+        </li>
+        <% if interpreter_signed_in? %>
+        <li class="right">
+            <%= link_to "ilogout", destroy_interpreter_session_path, method: :delete%>
+        </li>  
+        <li class="right">
+            <p class = "login-user-name">
+            <%= Interpreter.find(current_interpreter.id).interpreter_detail.first_name + " " + Interpreter.find(current_interpreter.id).interpreter_detail.last_name%>
+            </p>
+        </li>  
+        <% elsif client_signed_in? %>
+        <li class="right">
+            <%= link_to "clogout", destroy_client_session_path, method: :delete %>
+        </li> 
+        <% elsif admin_signed_in? %>
+        <li class="right">
+            <%= link_to "alogout", destroy_admin_session_path, method: :delete %>
+        </li> 
+        <% else %>
+        <li class="right">
+            <%= link_to "Interpreter login", new_interpreter_session_path,  class: "active"%>
+        </li>
+        <li class="right">
+            <%= link_to "Client login", new_client_session_path%>
+        </li>
+        <li class="right">
+            <%= link_to "login", new_admin_session_path%>
+        </li>
+        <% end %>
+    </ul>
+ 

@@ -1,0 +1,81 @@
+<%= form_with(model: interpreter_detail, local: true) do |form| %>
+  <% if interpreter_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(interpreter_detail.errors.count, "error") %> prohibited this interpreter_detail from being saved:</h2>
+
+      <ul>
+        <% interpreter_detail.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+ <!--   <%= form.label :interpreter_id %> -->
+    <%= form.hidden_field :interpreter_id %>
+  </div>
+ 
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :abn %>
+    <%= form.text_field :abn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mobile_no %>
+    <%= form.text_field :mobile_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sex %>
+    <%= form.select :sex, InterpreterDetail.sexes.keys %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment_rate %>
+    <%= form.text_field :payment_rate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating_score %>
+    <%= form.text_field :rating_score %>
+  </div>
+
+<%= form.fields_for :address do |af| %>
+    <div class="field">
+      <%= af.label :street_address %>
+      <%= af.text_field :street_address %>
+    </div>
+
+    <div class="field">
+      <%= af.label :suburb %>
+      <%= af.text_field :suburb %>
+    </div>
+
+    <div class="field">
+      <%= af.label :state %>
+      <%= af.select :state, Address.states.keys %>
+    </div>
+
+    <div class="field">
+      <%= af.label :postcode %>
+      <%= af.text_field :postcode %>
+    </div>
+<% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
